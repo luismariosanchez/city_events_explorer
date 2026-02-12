@@ -1,3 +1,6 @@
 {
-  "searchHint": "Search events..."
+  "searchHint": "Search events...",
+  "filterByRangeDateHint": "Filter by range date...",
+  "filterTitle": "Filters",
+  "clearFilter": "Clear filter"
 }
