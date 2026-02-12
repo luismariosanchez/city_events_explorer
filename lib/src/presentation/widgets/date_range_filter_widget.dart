@@ -32,10 +32,10 @@ class DateRangeFilterSheet extends StatelessWidget {
   }
 
   String getRangeText(
-      bool hasRange,
-      DateFormat formatter,
-      AppLocalizations l10n,
-      ) {
+    bool hasRange,
+    DateFormat formatter,
+    AppLocalizations l10n,
+  ) {
     return hasRange
         ? '${formatter.format(startDate!)} - ${formatter.format(endDate!)}'
         : l10n.filterByRangeDateHint;
