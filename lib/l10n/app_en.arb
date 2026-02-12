@@ -5,5 +5,6 @@
   "clearFilter": "Clear filter",
   "aboutTitle": "About",
   "removeFromFavorites": "Remove from Favorites",
-  "addToFavorites": "Add to Favorites"
+  "addToFavorites": "Add to Favorites",
+  "locationPreviewTitle": "Location Preview"
 }
