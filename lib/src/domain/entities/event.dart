@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:city_events_explorer/src/domain/entities/location.dart';
+import 'package:intl/intl.dart';
 
 @immutable
 class Event {
@@ -22,4 +23,11 @@ class Event {
     required this.imageUrl,
     required this.location,
   });
+
+  String getStartAndEnDateFormatted() {
+    final dateFormatter = DateFormat('dd MMM yyyy, HH:mm');
+    final String start = dateFormatter.format(startDate);
+    final String end = dateFormatter.format(endDate);
+    return '$start - $end';
+  }
 }
