@@ -1,6 +1,8 @@
 import 'package:city_events_explorer/src/data/repositories/event_repository_impl.dart';
 import 'package:city_events_explorer/src/data/repositories/favorites_repository_impl.dart';
+import 'package:city_events_explorer/src/domain/usecases/change_favorite_state_usecase.dart';
 import 'package:city_events_explorer/src/domain/usecases/get_events_usecase.dart';
+import 'package:city_events_explorer/src/domain/usecases/get_favorites_usecase.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:city_events_explorer/src/data/datasources/local_event_datasource.dart';
 import 'package:city_events_explorer/src/domain/repositories/event_repository.dart';
@@ -36,4 +38,16 @@ final Provider<FavoritesRepository> favoritesRepositoryProvider =
 final getEventsUseCaseProvider = Provider<GetEventsUseCase>((ref) {
   final repo = ref.watch(eventRepositoryProvider);
   return GetEventsUseCase(repo);
+});
+
+final getFavoritesUseCaseProvider = Provider<GetFavoritesUseCase>((ref) {
+  final repo = ref.watch(favoritesRepositoryProvider);
+  return GetFavoritesUseCase(repo);
+});
+
+final changeFavoriteStateUseCaseProvider = Provider<ChangeFavoriteStateUseCase>((
+  ref,
+) {
+  final repo = ref.watch(favoritesRepositoryProvider);
+  return ChangeFavoriteStateUseCase(repo);
 });

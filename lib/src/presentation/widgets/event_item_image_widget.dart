@@ -6,12 +6,12 @@ class EventItemImageWidget extends StatelessWidget {
     super.key,
     required this.event,
     required this.isFavorite,
-    this.onFavoritePressed,
+    required this.onFavoritePressed,
   });
 
   final Event event;
   final bool isFavorite;
-  final VoidCallback? onFavoritePressed;
+  final Future<void> Function(bool newState, String id) onFavoritePressed;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,10 @@ class EventItemImageWidget extends StatelessWidget {
         child: IconButton(
           padding: const EdgeInsets.all(0),
           icon: Icon(favoriteIcon, color: favoriteColor),
-          onPressed: onFavoritePressed,
+          onPressed: () async {
+            final newState = !isFavorite;
+            await onFavoritePressed(newState, event.id);
+          },
         ),
       ),
     );
