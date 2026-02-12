@@ -27,7 +27,7 @@ class EventModel {
     title: json['title'] as String,
     description: json['description'] as String,
     category: json['category'] as String,
-    startDate: json['startDate']as String,
+    startDate: json['startDate'] as String,
     endDate: json['endDate'] as String,
     imageUrl: json['imageUrl'] as String,
     location: json['location'] as Map<String, dynamic>,

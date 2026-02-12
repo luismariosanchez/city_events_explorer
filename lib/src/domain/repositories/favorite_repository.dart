@@ -1,4 +1,3 @@
-
 abstract class FavoritesRepository {
   Future<List<String>> getFavorites();
 
