@@ -9,7 +9,7 @@ class FilterButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[850],
+        color: const Color(0xFF232321),
         borderRadius: BorderRadius.circular(100),
       ),
       child: IconButton(

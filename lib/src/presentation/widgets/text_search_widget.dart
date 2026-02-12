@@ -11,7 +11,7 @@ class TextSearchWidget extends StatelessWidget {
     return Container(
       height: 45,
       decoration: BoxDecoration(
-        color: Colors.grey[850],
+        color: const Color(0xFF232321),
         borderRadius: BorderRadius.circular(100),
       ),
       child: TextField(
