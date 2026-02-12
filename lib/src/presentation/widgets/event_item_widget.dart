@@ -19,7 +19,7 @@ class EventItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          EventItemImageWidget(event: event, isFavorite: true,),
+          EventItemImageWidget(event: event, isFavorite: true),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             child: Column(

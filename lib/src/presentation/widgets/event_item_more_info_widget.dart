@@ -1,6 +1,7 @@
 import 'package:city_events_explorer/src/domain/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 class EventItemMoreInfoWidget extends StatelessWidget {
   const EventItemMoreInfoWidget({super.key, required this.event});
 
@@ -29,7 +30,7 @@ class EventItemMoreInfoWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 5,),
+        const SizedBox(height: 5),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
