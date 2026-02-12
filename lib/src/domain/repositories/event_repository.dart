@@ -8,4 +8,6 @@ abstract class EventRepository {
     DateTime? startDate,
     DateTime? endDate,
   });
+
+  Future<Event> getEventById(String id);
 }
