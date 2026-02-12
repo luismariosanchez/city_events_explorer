@@ -12,14 +12,14 @@ class Event {
   final String imageUrl;
   final Location location;
 
-  const Event(
-    this.id,
-    this.title,
-    this.description,
-    this.category,
-    this.startDate,
-    this.endDate,
-    this.imageUrl,
-    this.location,
-  );
+  const Event({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.category,
+    required this.startDate,
+    required this.endDate,
+    required this.imageUrl,
+    required this.location,
+  });
 }

@@ -6,5 +6,9 @@ class Location {
   final double lat;
   final double lng;
 
-  const Location(this.name, this.lat, this.lng);
+  const Location({
+    required this.name,
+    required this.lat,
+    required this.lng,
+  });
 }
