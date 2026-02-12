@@ -11,7 +11,7 @@ void main() {
     title: 'Test Event Title',
     description: 'Test event description that should be visible.',
     category: 'Test',
-    startDate: DateTime(2024, 1, 1),
+    startDate: DateTime(2024),
     endDate: DateTime(2024, 1, 2),
     imageUrl: 'https://picsum.photos/seed/test/600/300',
     location: const Location(name: 'Test Location', lat: 0, lng: 0),
