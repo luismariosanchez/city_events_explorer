@@ -1,5 +1,7 @@
 import 'package:city_events_explorer/src/data/datasources/local_event_datasource.dart';
 import 'package:city_events_explorer/src/domain/entities/event.dart';
+import 'package:city_events_explorer/src/domain/entities/event_page.dart';
+import 'package:city_events_explorer/src/domain/entities/filter_params.dart';
 import 'package:city_events_explorer/src/domain/repositories/event_repository.dart';
 
 class EventRepositoryImpl implements EventRepository {
@@ -14,23 +16,21 @@ class EventRepositoryImpl implements EventRepository {
   }
 
   @override
-  Future<List<Event>> getEventsFiltered({
-    String? category,
-    DateTime? startDate,
-    DateTime? endDate,
-  }) async {
+  Future<List<Event>> getEventsFiltered(FilterParams params) async {
     final allEvents = await getEvents();
 
     return allEvents.where((event) {
       final matchesCategory =
-          category == null ||
-          category.isEmpty ||
-          event.category.toLowerCase().contains(category.toLowerCase());
+          params.category == null ||
+          params.category!.isEmpty ||
+          event.category.toLowerCase().contains(params.category!.toLowerCase());
 
       final matchesStart =
-          startDate == null || !event.startDate.isBefore(startDate);
+          params.startDate == null ||
+          !event.startDate.isBefore(params.startDate!);
 
-      final matchesEnd = endDate == null || !event.endDate.isAfter(endDate);
+      final matchesEnd =
+          params.endDate == null || !event.endDate.isAfter(params.endDate!);
       return matchesCategory && matchesStart && matchesEnd;
     }).toList();
   }
@@ -39,5 +39,26 @@ class EventRepositoryImpl implements EventRepository {
   Future<Event> getEventById(String id) async {
     final allEvents = await getEvents();
     return allEvents.firstWhere((event) => event.id == id);
+  }
+
+  @override
+  Future<EventPage> getPaginatedEvents(
+    FilterParams params,
+    int page,
+    int limit,
+  ) async {
+    final filteredEvents = await getEventsFiltered(params);
+
+    final startIndex = page * limit;
+    final endIndex = startIndex + limit;
+
+    final eventList = filteredEvents.sublist(
+      startIndex,
+      endIndex > filteredEvents.length ? filteredEvents.length : endIndex,
+    );
+
+    final hasMore = endIndex < filteredEvents.length;
+
+    return EventPage(eventList: eventList, hasMore: hasMore);
   }
 }
