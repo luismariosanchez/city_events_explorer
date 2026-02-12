@@ -11,11 +11,7 @@ class GetEventsUseCase {
     if (filters == null) {
       return _repository.getEvents();
     } else {
-      return _repository.getEventsFiltered(
-        category: filters.category,
-        startDate: filters.startDate,
-        endDate: filters.endDate,
-      );
+      return _repository.getEventsFiltered(filters);
     }
   }
 }
