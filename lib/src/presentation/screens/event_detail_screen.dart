@@ -3,6 +3,7 @@ import 'package:city_events_explorer/src/domain/entities/event.dart';
 import 'package:city_events_explorer/src/presentation/providers/event_detail_provider.dart';
 import 'package:city_events_explorer/src/presentation/providers/favorites_provider.dart';
 import 'package:city_events_explorer/src/presentation/widgets/event_item_info_widget.dart';
+import 'package:city_events_explorer/src/presentation/widgets/map_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -125,7 +126,10 @@ class EventDetailScreen extends ConsumerWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 24),
-                  // You could add a map view here for the location
+                  MapViewWidget(
+                    lat: event.location.lat,
+                    lng: event.location.lng,
+                  ),
                 ],
               ),
             ),
