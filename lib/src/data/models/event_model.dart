@@ -44,7 +44,7 @@ class EventModel {
     'location': location,
   };
 
-  Event toDomain() => Event(
+  Event toEntity() => Event(
     id: id,
     title: title,
     description: description,
