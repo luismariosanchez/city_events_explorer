@@ -15,22 +15,25 @@ class EventHomeScreen extends ConsumerWidget {
     final favoritesNotifier = ref.watch(favoritesProvider.notifier);
     return Scaffold(
       appBar: const EventHomeScreenAppBarWidget(),
-      body: eventsAsync.when(
-        data: (events) => ListView.builder(
-          itemCount: events.length,
-          itemBuilder: (context, index) {
-            final event = events[index];
-            return EventItemWidget(
-              event: event,
-              isFavorite: favorites.contains(event.id),
-              onFavoritePressed: favoritesNotifier.onFavoritePressed,
-            );
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: eventsAsync.when(
+          data: (events) => ListView.builder(
+            itemCount: events.length,
+            itemBuilder: (context, index) {
+              final event = events[index];
+              return EventItemWidget(
+                event: event,
+                isFavorite: favorites.contains(event.id),
+                onFavoritePressed: favoritesNotifier.onFavoritePressed,
+              );
+            },
+          ),
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, st) {
+            return Center(child: Text('Error: $err'));
           },
         ),
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, st) {
-          return Center(child: Text('Error: $err'));
-        },
       ),
     );
   }
