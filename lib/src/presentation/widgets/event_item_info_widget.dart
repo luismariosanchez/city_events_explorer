@@ -5,19 +5,28 @@ class EventItemInfoWidget extends StatelessWidget {
     super.key,
     required this.iconData,
     required this.description,
+    this.color = Colors.white38,
+    this.fontSize = 14,
   });
 
   final IconData iconData;
   final String description;
+
+  final Color color;
+
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(iconData, color: Colors.white38),
+        Icon(iconData, color: color),
         const SizedBox(width: 5),
-        Text(description, style: const TextStyle(color: Colors.white38)),
+        Text(
+          description,
+          style: TextStyle(color: color, fontSize: fontSize),
+        ),
       ],
     );
   }

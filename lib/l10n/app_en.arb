@@ -2,5 +2,8 @@
   "searchHint": "Search events...",
   "filterByRangeDateHint": "Filter by range date...",
   "filterTitle": "Filters",
-  "clearFilter": "Clear filter"
+  "clearFilter": "Clear filter",
+  "aboutTitle": "About",
+  "removeFromFavorites": "Remove from Favorites",
+  "addToFavorites": "Add to Favorites"
 }
