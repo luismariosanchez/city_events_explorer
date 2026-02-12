@@ -1,13 +1,15 @@
 import 'package:city_events_explorer/l10n/app_localizations.dart';
+import 'package:city_events_explorer/src/presentation/providers/search_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TextSearchWidget extends StatelessWidget {
-  const TextSearchWidget({super.key, required this.onSearchChanged});
-  final void Function(String p1)? onSearchChanged;
+class TextSearchWidget extends ConsumerWidget {
+  const TextSearchWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     AppLocalizations? l10n = AppLocalizations.of(context);
+    final searchNotifier = ref.read(searchQueryProvider.notifier);
     return Container(
       height: 45,
       decoration: BoxDecoration(
@@ -23,7 +25,7 @@ class TextSearchWidget extends StatelessWidget {
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(vertical: 10),
         ),
-        onChanged: onSearchChanged,
+        onChanged: searchNotifier.updateSearchQuery,
       ),
     );
   }

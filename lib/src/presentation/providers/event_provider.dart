@@ -2,18 +2,29 @@ import 'package:city_events_explorer/src/domain/entities/event.dart';
 import 'package:city_events_explorer/src/domain/entities/filter_params.dart';
 import 'package:city_events_explorer/src/domain/usecases/get_events_usecase.dart';
 import 'package:city_events_explorer/src/presentation/providers/repositories_provider.dart';
+import 'package:city_events_explorer/src/presentation/providers/search_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class EventController extends StateNotifier<AsyncValue<List<Event>>> {
   final GetEventsUseCase _getEvents;
+  final Ref _ref;
 
-  EventController(this._getEvents) : super(const AsyncValue.loading()) {
-    loadEvents();
+  EventController(this._getEvents, this._ref)
+    : super(const AsyncValue.loading()) {
+    // Listen to search query changes and refetch events
+    _ref.listen<String>(searchQueryProvider, (previous, next) {
+      fetchEvents();
+    });
+    // Initial fetch
+    fetchEvents();
   }
 
-  Future<void> loadEvents([FilterParams? filters]) async {
+  Future<void> fetchEvents() async {
+    state = const AsyncValue.loading();
+    final searchQuery = _ref.read(searchQueryProvider);
+    final filters = FilterParams(category: searchQuery);
+
     try {
-      state = const AsyncValue.loading();
       final events = await _getEvents(filters);
       state = AsyncValue.data(events);
     } catch (e, st) {
@@ -21,12 +32,17 @@ class EventController extends StateNotifier<AsyncValue<List<Event>>> {
     }
   }
 
-  Future<void> refresh([FilterParams? filters]) => loadEvents(filters);
+  // You can now add methods for pull to refresh, lazy loading, etc.
+  Future<void> refresh() async {
+    // This will refetch using the current search query
+    await fetchEvents();
+  }
 }
 
-final StateNotifierProvider<EventController, AsyncValue<List<Event>>>
-eventsProvider =
-    StateNotifierProvider<EventController, AsyncValue<List<Event>>>((Ref ref) {
-      final GetEventsUseCase useCase = ref.watch(getEventsUseCaseProvider);
-      return EventController(useCase);
-    });
+final eventsProvider =
+    StateNotifierProvider.autoDispose<EventController, AsyncValue<List<Event>>>(
+      (ref) {
+        final getEvents = ref.watch(getEventsUseCaseProvider);
+        return EventController(getEvents, ref);
+      },
+    );

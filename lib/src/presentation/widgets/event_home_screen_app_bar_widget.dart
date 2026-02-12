@@ -4,20 +4,15 @@ import 'package:flutter/material.dart';
 
 class EventHomeScreenAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
-  final void Function(String)? onSearchChanged;
   final VoidCallback? onFilterPressed;
-  const EventHomeScreenAppBarWidget({
-    this.onSearchChanged,
-    this.onFilterPressed,
-    super.key,
-  });
+  const EventHomeScreenAppBarWidget({this.onFilterPressed, super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
       toolbarHeight: 70,
-      title: TextSearchWidget(onSearchChanged: onSearchChanged),
+      title: const TextSearchWidget(),
       actions: [
         FilterButtonWidget(onFilterPressed: onFilterPressed),
         const SizedBox(width: 8),

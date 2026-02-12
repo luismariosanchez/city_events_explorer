@@ -20,11 +20,17 @@ class EventRepositoryImpl implements EventRepository {
     DateTime? endDate,
   }) async {
     final allEvents = await getEvents();
+
     return allEvents.where((event) {
-      final matchesCategory = category == null || event.category == category;
+      final matchesCategory =
+          category == null ||
+          category.isEmpty ||
+          event.category.toLowerCase().contains(category.toLowerCase());
+
       final matchesStart =
-          startDate == null || event.startDate.isAfter(startDate);
-      final matchesEnd = endDate == null || event.endDate.isBefore(endDate);
+          startDate == null || !event.startDate.isBefore(startDate);
+
+      final matchesEnd = endDate == null || !event.endDate.isAfter(endDate);
       return matchesCategory && matchesStart && matchesEnd;
     }).toList();
   }
