@@ -25,6 +25,10 @@ class EventItemImageWidget extends StatelessWidget {
           image: NetworkImage(event.imageUrl),
           fit: BoxFit.fill,
         ),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
       ),
       child: Align(
         alignment: Alignment.topRight,
