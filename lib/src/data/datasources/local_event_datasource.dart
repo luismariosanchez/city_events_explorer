@@ -9,10 +9,14 @@ class LocalEventDataSource {
 
   Future<List<EventModel>> loadEvents() async {
     final String jsonString = await rootBundle.loadString(path);
-    final List<Map<String, dynamic>> decoded =
-        json.decode(jsonString) as List<Map<String, dynamic>>;
+    final List<dynamic> decoded = json.decode(jsonString) as List<dynamic>;
+
     return decoded
-        .map((Map<String, dynamic> event) => EventModel.fromJson(event))
+        .whereType<Map<String, dynamic>>()
+        .map(
+          (Map<String, dynamic> event) =>
+              EventModel.fromJson(Map<String, dynamic>.from(event)),
+        )
         .toList();
   }
 }
