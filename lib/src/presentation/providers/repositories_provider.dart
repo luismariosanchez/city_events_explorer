@@ -45,9 +45,9 @@ final getFavoritesUseCaseProvider = Provider<GetFavoritesUseCase>((ref) {
   return GetFavoritesUseCase(repo);
 });
 
-final changeFavoriteStateUseCaseProvider = Provider<ChangeFavoriteStateUseCase>((
-  ref,
-) {
-  final repo = ref.watch(favoritesRepositoryProvider);
-  return ChangeFavoriteStateUseCase(repo);
-});
+final changeFavoriteStateUseCaseProvider = Provider<ChangeFavoriteStateUseCase>(
+  (ref) {
+    final repo = ref.watch(favoritesRepositoryProvider);
+    return ChangeFavoriteStateUseCase(repo);
+  },
+);

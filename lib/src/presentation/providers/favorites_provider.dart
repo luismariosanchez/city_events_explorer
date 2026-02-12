@@ -8,7 +8,7 @@ class FavoritesController extends StateNotifier<List<String>> {
   final ChangeFavoriteStateUseCase _changeFavoriteState;
 
   FavoritesController(this._getFavorites, this._changeFavoriteState)
-      : super([]) {
+    : super([]) {
     _loadFavorites();
   }
 
@@ -31,7 +31,7 @@ class FavoritesController extends StateNotifier<List<String>> {
 
 final favoritesProvider =
     StateNotifierProvider<FavoritesController, List<String>>((ref) {
-  final getFavs = ref.watch(getFavoritesUseCaseProvider);
-  final changeFav = ref.watch(changeFavoriteStateUseCaseProvider);
-  return FavoritesController(getFavs, changeFav);
-});
+      final getFavs = ref.watch(getFavoritesUseCaseProvider);
+      final changeFav = ref.watch(changeFavoriteStateUseCaseProvider);
+      return FavoritesController(getFavs, changeFav);
+    });
