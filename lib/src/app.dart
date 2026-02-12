@@ -38,7 +38,7 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF111113),
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-          color: Color(0xFF111113),
+          backgroundColor: Color(0xFF111113),
           surfaceTintColor: Color(0xFF111113),
         ),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
