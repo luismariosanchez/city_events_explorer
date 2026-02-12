@@ -18,8 +18,8 @@
     "title": "Evening Jazz in the Square",
     "description": "Relax with live jazz music in the heart of the city.",
     "category": "Music & Arts",
-    "startDate": "2025-07-03T18:30:00Z",
-    "endDate": "2025-07-03T20:30:00Z",
+    "startDate": "2026-01-01T16:00:00Z",
+    "endDate": "2026-01-01T18:30:00Z",
     "imageUrl": "https://picsum.photos/seed/jazz/600/300",
     "location": {
       "name": "Downtown Square",
@@ -67,6 +67,146 @@
       "name": "Hilltop Observatory",
       "lat": 37.774929,
       "lng": -122.419418
+    }
+  },
+  {
+    "id": "6",
+    "title": "Evening Meditation Workshop",
+    "description": "Relax your mind and body with guided meditation.",
+    "category": "Health & Wellness",
+    "startDate": "2025-07-02T18:00:00Z",
+    "endDate": "2025-07-02T19:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/meditation/600/300",
+    "location": {
+      "name": "Zen Center",
+      "lat": 40.730610,
+      "lng": -73.935242
+    }
+  },
+  {
+    "id": "7",
+    "title": "City Cycling Tour",
+    "description": "Explore the city on bicycles with a guided tour.",
+    "category": "Fitness",
+    "startDate": "2025-07-03T09:00:00Z",
+    "endDate": "2025-07-03T12:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/cycling/600/300",
+    "location": {
+      "name": "Downtown Plaza",
+      "lat": 40.758896,
+      "lng": -73.985130
+    }
+  },
+  {
+    "id": "8",
+    "title": "Outdoor Movie Night",
+    "description": "Watch classic movies under the stars in the park.",
+    "category": "Entertainment",
+    "startDate": "2025-07-04T20:00:00Z",
+    "endDate": "2025-07-04T22:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/movie/600/300",
+    "location": {
+      "name": "City Park Amphitheater",
+      "lat": 40.741895,
+      "lng": -73.989308
+    }
+  },
+  {
+    "id": "9",
+    "title": "Cooking Class: Italian Cuisine",
+    "description": "Learn to cook authentic Italian dishes in this hands-on class.",
+    "category": "Food & Drink",
+    "startDate": "2025-07-05T17:00:00Z",
+    "endDate": "2025-07-05T19:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/cooking/600/300",
+    "location": {
+      "name": "Gourmet Kitchen Studio",
+      "lat": 40.712776,
+      "lng": -74.005974
+    }
+  },
+  {
+    "id": "10",
+    "title": "Street Photography Walk",
+    "description": "Capture candid city life with a professional photographer.",
+    "category": "Photography",
+    "startDate": "2026-01-01T16:00:00Z",
+    "endDate": "2026-02-01T18:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/streetphoto/600/300",
+    "location": {
+      "name": "Historic Downtown",
+      "lat": 40.748817,
+      "lng": -73.985428
+    }
+  },
+  {
+    "id": "11",
+    "title": "Morning Run by the Lake",
+    "description": "Join a refreshing morning run and meet new friends.",
+    "category": "Fitness",
+    "startDate": "2025-07-05T06:30:00Z",
+    "endDate": "2025-07-05T07:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/run/600/300",
+    "location": {
+      "name": "Lakeview Park",
+      "lat": 40.770610,
+      "lng": -73.974093
+    }
+  },
+  {
+    "id": "12",
+    "title": "Art & Wine Evening",
+    "description": "Paint, sip wine, and enjoy a creative evening with friends.",
+    "category": "Art & Culture",
+    "startDate": "2025-07-10T19:00:00Z",
+    "endDate": "2025-07-10T21:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/artwine/600/300",
+    "location": {
+      "name": "Downtown Art Studio",
+      "lat": 40.741895,
+      "lng": -73.989308
+    }
+  },
+  {
+    "id": "13",
+    "title": "Sunset Kayaking Adventure",
+    "description": "Experience the beauty of the sunset while kayaking on the river.",
+    "category": "Outdoor",
+    "startDate": "2025-07-15T18:30:00Z",
+    "endDate": "2025-07-15T20:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/kayak/600/300",
+    "location": {
+      "name": "Riverfront Marina",
+      "lat": 40.712776,
+      "lng": -74.005974
+    }
+  },
+  {
+    "id": "14",
+    "title": "Live Jazz Night",
+    "description": "Enjoy live jazz music with delicious food and drinks.",
+    "category": "Music",
+    "startDate": "2025-07-20T20:00:00Z",
+    "endDate": "2025-07-20T23:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/jazz/600/300",
+    "location": {
+      "name": "Blue Note Jazz Club",
+      "lat": 40.730610,
+      "lng": -73.935242
+    }
+  },
+  {
+    "id": "15",
+    "title": "Evening Photography Walk",
+    "description": "Capture the city lights and enjoy a photo walk with enthusiasts.",
+    "category": "Photography",
+    "startDate": "2025-07-25T18:00:00Z",
+    "endDate": "2025-07-25T20:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/photo/600/300",
+    "location": {
+      "name": "Old Town District",
+      "lat": 40.748817,
+      "lng": -73.985428
     }
   }
 ]
