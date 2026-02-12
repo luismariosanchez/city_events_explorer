@@ -12,5 +12,61 @@
       "lat": 40.785091,
       "lng": -73.968285
     }
+  },
+  {
+    "id": "2",
+    "title": "Evening Jazz in the Square",
+    "description": "Relax with live jazz music in the heart of the city.",
+    "category": "Music & Arts",
+    "startDate": "2025-07-03T18:30:00Z",
+    "endDate": "2025-07-03T20:30:00Z",
+    "imageUrl": "https://picsum.photos/seed/jazz/600/300",
+    "location": {
+      "name": "Downtown Square",
+      "lat": 41.878113,
+      "lng": -87.629799
+    }
+  },
+  {
+    "id": "3",
+    "title": "Sunset Photography Walk",
+    "description": "Capture the beauty of the city during golden hour with expert guidance.",
+    "category": "Photography",
+    "startDate": "2025-07-04T19:00:00Z",
+    "endDate": "2025-07-04T21:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/photowalk/600/300",
+    "location": {
+      "name": "Riverside Promenade",
+      "lat": 51.507351,
+      "lng": -0.127758
+    }
+  },
+  {
+    "id": "4",
+    "title": "Outdoor Painting Class",
+    "description": "Learn to paint landscapes in a fun outdoor session for all levels.",
+    "category": "Art & Creativity",
+    "startDate": "2025-07-05T15:00:00Z",
+    "endDate": "2025-07-05T17:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/painting/600/300",
+    "location": {
+      "name": "Botanical Garden",
+      "lat": 48.856613,
+      "lng": 2.352222
+    }
+  },
+  {
+    "id": "5",
+    "title": "Night Sky Stargazing",
+    "description": "Explore the constellations with telescopes and expert astronomers.",
+    "category": "Science & Nature",
+    "startDate": "2025-07-06T21:00:00Z",
+    "endDate": "2025-07-06T23:00:00Z",
+    "imageUrl": "https://picsum.photos/seed/stargazing/600/300",
+    "location": {
+      "name": "Hilltop Observatory",
+      "lat": 37.774929,
+      "lng": -122.419418
+    }
   }
 ]
