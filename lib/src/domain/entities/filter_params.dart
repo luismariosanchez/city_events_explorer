@@ -6,9 +6,5 @@ class FilterParams {
   final DateTime? startDate;
   final DateTime? endDate;
 
-  const FilterParams({
-    this.category,
-    this.startDate,
-    this.endDate,
-  });
+  const FilterParams({this.category, this.startDate, this.endDate});
 }

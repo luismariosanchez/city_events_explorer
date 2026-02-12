@@ -21,7 +21,9 @@ final Provider<LocalEventDataSource> localEventDataSourceProvider =
 
 final Provider<EventRepository> eventRepositoryProvider =
     Provider<EventRepository>((Ref ref) {
-      final LocalEventDataSource dataSource = ref.read(localEventDataSourceProvider);
+      final LocalEventDataSource dataSource = ref.read(
+        localEventDataSourceProvider,
+      );
       return EventRepositoryImpl(dataSource: dataSource);
     });
 
