@@ -34,4 +34,10 @@ class EventRepositoryImpl implements EventRepository {
       return matchesCategory && matchesStart && matchesEnd;
     }).toList();
   }
+
+  @override
+  Future<Event> getEventById(String id) async {
+    final allEvents = await getEvents();
+    return allEvents.firstWhere((event) => event.id == id);
+  }
 }
