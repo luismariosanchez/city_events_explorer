@@ -1,4 +1,5 @@
 import 'package:city_events_explorer/src/domain/entities/event.dart';
+import 'package:city_events_explorer/src/presentation/widgets/event_item_info_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -19,28 +20,19 @@ class EventItemMoreInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.place_outlined, color: Colors.white38),
-            const SizedBox(width: 5),
-            Text(
-              event.location.name,
-              style: const TextStyle(color: Colors.white38),
-            ),
-          ],
+        EventItemInfoWidget(
+          description: event.location.name,
+          iconData: Icons.place_outlined,
         ),
         const SizedBox(height: 5),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.calendar_month_rounded, color: Colors.white38),
-            const SizedBox(width: 5),
-            Text(
-              _getStartAndEnDateFormatted(),
-              style: const TextStyle(color: Colors.white38),
-            ),
-          ],
+        EventItemInfoWidget(
+          description: _getStartAndEnDateFormatted(),
+          iconData: Icons.calendar_month_rounded,
+        ),
+        const SizedBox(height: 5),
+        EventItemInfoWidget(
+          description: event.category,
+          iconData: Icons.category_outlined,
         ),
       ],
     );
